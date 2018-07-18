@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hw2" class="com.stuspring.HelloWord">
+        <property name="name" value="香格里拉"/>
+    </bean>
+
+    <!--使用构造器注入属性可以指定参数的位置和参数的类型以区分重载的构造器-->
+    <bean id="car1" class="com.stuspring.Car">
+        <constructor-arg name="brand" value="fard" index="0"/>
+        <constructor-arg name="corp" value="上海" index="1"/>
+        <constructor-arg name="price" value="156800" index="2"/>
+    </bean>
+
+    <bean id="car2" class="com.stuspring.Car">
+        <constructor-arg name="brand" value="fard" index="0"/>
+        <constructor-arg name="corp" value="北京" index="1"/>
+        <constructor-arg name="price" value="156800" index="2"/>
+    </bean>
+
+    <bean id="person" class="com.stuspring.Person">
+        <constructor-arg name="name" value="大卫"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="car" ref="car1"/>
+    </bean>
+
+    <bean id="person1" class="com.stuspring.Person">
+        <property name="age" value="28"/>
+        <property name="name" value="大佬"/>
+        <property name="lists">
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+                <bean class="com.stuspring.Car">
+                    <constructor-arg name="brand" value="hehe"/>
+                    <constructor-arg name="corp" value="杭州"/>
+                    <constructor-arg name="price" value="3000"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>
