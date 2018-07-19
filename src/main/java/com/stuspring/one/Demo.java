@@ -1,6 +1,5 @@
-import com.stuspring.Car;
-import com.stuspring.HelloWord;
-import com.stuspring.Person;
+package com.stuspring.one;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,6 +24,12 @@ public class Demo {
         System.out.println(person.toString());
 
         Person person1 = (Person) ctx.getBean("person1");
-        System.out.println(person1.toString());
+        System.out.println("list = " + person1.toString());
+
+        Newerson new_person = (Newerson) ctx.getBean("new_person");
+        System.out.println("map = " + new_person.toString());
+
+        Newerson new_person1 = (Newerson) ctx.getBean("new_person1");
+        System.out.println("map1 = " + new_person1.toString());
     }
 }

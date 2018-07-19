@@ -1,4 +1,4 @@
-package com.stuspring;
+package com.stuspring.one;
 
 public class HelloWord {
     private String name;

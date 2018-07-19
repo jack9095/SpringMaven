@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="hw2" class="com.stuspring.HelloWord">
+    <bean id="hw2" class="com.stuspring.one.HelloWord">
         <property name="name" value="香格里拉"/>
     </bean>
 
     <!--使用构造器注入属性可以指定参数的位置和参数的类型以区分重载的构造器-->
-    <bean id="car1" class="com.stuspring.Car">
+    <bean id="car1" class="com.stuspring.one.Car">
         <constructor-arg name="brand" value="fard" index="0"/>
         <constructor-arg name="corp" value="上海" index="1"/>
         <constructor-arg name="price" value="156800" index="2"/>
     </bean>
 
-    <bean id="car2" class="com.stuspring.Car">
+    <bean id="car2" class="com.stuspring.one.Car">
         <constructor-arg name="brand" value="fard" index="0"/>
         <constructor-arg name="corp" value="北京" index="1"/>
         <constructor-arg name="price" value="156800" index="2"/>
     </bean>
 
-    <bean id="person" class="com.stuspring.Person">
+    <bean id="person" class="com.stuspring.one.Person">
         <constructor-arg name="name" value="大卫"/>
         <constructor-arg name="age" value="18"/>
         <constructor-arg name="car" ref="car1"/>
     </bean>
 
-    <bean id="person1" class="com.stuspring.Person">
+    <bean id="person1" class="com.stuspring.one.Person">
         <property name="age" value="28"/>
         <property name="name" value="大佬"/>
         <property name="lists">
             <list>
                 <ref bean="car1"/>
                 <ref bean="car2"/>
-                <bean class="com.stuspring.Car">
+                <bean class="com.stuspring.one.Car">
                     <constructor-arg name="brand" value="hehe"/>
                     <constructor-arg name="corp" value="杭州"/>
                     <constructor-arg name="price" value="3000"/>
@@ -41,4 +42,48 @@
             </list>
         </property>
     </bean>
+
+    <bean id="new_person" class="com.stuspring.one.Newerson">
+        <property name="name" value="飞流"/>
+        <property name="age" value="16"/>
+        <property name="sex" value="男"/>
+        <property name="maps">
+            <map>
+                <entry key="aa" value-ref="car1"/>
+                <entry key="bb" value-ref="car2"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 配置properties-->
+    <bean id="date_resource" class="com.stuspring.one.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123456</prop>
+                <prop key="jdbcurl">jdbc:mysql://test</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--自动装配-->
+    <bean id="new_person1" class="com.stuspring.one.Newerson"
+          p:name="京城" p:age="30" p:sex="男"/>
+
+    <!--bean 继承-->
+    <bean id="person2" class="com.stuspring.one.Newerson">
+        <property name="sex" value="man"/>
+        <property name="age" value="20"/>
+        <property name="name" value="jingcheng"/>
+    </bean>
+    <!--<bean id="cra4" class="com.stuspring.one.Car">
+        <constructor-arg name="brand" value="西门子"/>
+        <constructor-arg name="corp" value="北京"/>
+        <constructor-arg name="price" value="280000"/>
+    </bean>-->
+    <bean id="person3" class="com.stuspring.one.Newerson" parent="person2">
+        <property name="age" value="30"/>
+    </bean>
+
 </beans>

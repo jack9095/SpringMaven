@@ -1,4 +1,4 @@
-package com.stuspring;
+package com.stuspring.one;
 
 import java.util.List;
 
