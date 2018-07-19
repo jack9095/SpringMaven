@@ -8,9 +8,9 @@ import java.sql.Connection;
 public class DbDemo {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans_properties.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans_properties.xml");
         try {
-            DataSource dataSource = (DataSource) context.getBean("dataSource2");
+            DataSource dataSource = (DataSource) ctx.getBean("dataSource");
             Connection connection = dataSource.getConnection();
             System.out.println("connection = " + connection);
         } catch (Exception e) {
