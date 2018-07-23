@@ -1,8 +1,5 @@
 package annotation.demo;
 
-import annotation.BasePerson;
-import annotation.MyAnnotation;
-
 @MyAnnotation
 public class ChildPerson implements BasePerson{
 

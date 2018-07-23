@@ -1,4 +1,4 @@
-package annotation;
+package annotation.demo;
 
 @MyAnnotation
 public interface BasePerson {
