@@ -24,8 +24,8 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <version>RELEASE</version>
+      <scope>JDBCTest</scope>
     </dependency>
 
     <dependency>
@@ -33,6 +33,14 @@
       <artifactId>spring-context</artifactId>
       <version>4.3.8.RELEASE</version>
     </dependency>
+
+     <!--链接数据库的JDBC-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>4.3.8.RELEASE</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
     <dependency>
@@ -83,6 +91,7 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.10</version>
     </dependency>
+
   </dependencies>
 
   <build>
