@@ -13,11 +13,11 @@ public class JDBCTestDemo {
     public void test(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/Fly");
         dataSource.setUsername("root");
         dataSource.setPassword("12345678");
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        jdbcTemplate.execute("CREATE TABLE demo(id INT PRIMARY KEY,name VARCHAR(32))");
+        jdbcTemplate.execute("CREATE TABLE TEACHER(id INT PRIMARY KEY,name VARCHAR(32))");
     }
 }
