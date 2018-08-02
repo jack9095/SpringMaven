@@ -5,18 +5,9 @@ public class Student {
     private String name;
     private String sex;
     private String phone;
-    private int sid;
 
     public String getName() {
         return name;
-    }
-
-    public int getSid() {
-        return sid;
-    }
-
-    public void setSid(int sid) {
-        this.sid = sid;
     }
 
     public void setName(String name) {

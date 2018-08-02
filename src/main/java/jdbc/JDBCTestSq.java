@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 参考模版（测试）
+ * 参考模版（测试、有错误、将来改）
  */
 public class JDBCTestSq {
     private ApplicationContext ctx = null;
