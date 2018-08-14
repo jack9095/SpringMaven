@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fly.iml" filepath="$PROJECT_DIR$/fly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/mybatis.iml" filepath="$PROJECT_DIR$/src/mybatis.iml" />
     </modules>
   </component>
 </project>
